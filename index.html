@@ -612,7 +612,8 @@
         duration: "4 days / 32 hours",
         format: "Live online or on-site",
         level: "Intermediate",
-        audience: "English / Arabic",
+        audience: "Tech Professionals (Beginner to Advanced)",
+        language: "English & Arabic",
         bullets: [
           "Azure fundamentals and architecture overview",
           "Compute, storage, networking, and identity",
@@ -630,6 +631,7 @@
         format: "Live online or on-site",
         level: "Beginner",
         audience: "Business professionals",
+        language: "English & Arabic",
         bullets: [
           "What is AI, cloud, and modern IT",
           "Key business use cases",
@@ -648,6 +650,7 @@
         format: "Live online or on-site",
         level: "Beginner / Intermediate / Advanced",
         audience: "Who this is for",
+        language: "English & Arabic",
         bullets: [
           "Topic 1",
           "Topic 2",
@@ -675,6 +678,7 @@
             <div><dt>Format</dt><dd>${esc(c.format)}</dd></div>
             <div><dt>Level</dt><dd>${esc(c.level)}</dd></div>
             <div><dt>Audience</dt><dd>${esc(c.audience)}</dd></div>
+            <div><dt>Language</dt><dd>${esc(c.language)}</dd></div>
           </dl>
           <ul>${c.bullets.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>
           <div class="card-actions">
