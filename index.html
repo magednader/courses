@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Microsoft & Cloud Learning Academy</title>
+  <title>Maged Nader — Live Microsoft Cloud & AI Training</title>
   <link rel="icon" href="data:,">
   <script>
     (() => {
@@ -21,18 +21,13 @@
       --cp-surface: #ffffff;
       --cp-surface-soft: #eef3f9;
       --cp-border: #d9e2ec;
-      --cp-border-strong: #8a99a8;
       --cp-text: #0f1e33;
       --cp-text-muted: #4a5c72;
-      --cp-text-soft: #6a7a8c;
       --cp-accent: #0a66c2;
       --cp-accent-hover: #084a91;
       --cp-accent-soft: rgba(10, 102, 194, 0.09);
       --cp-accent-fg: #ffffff;
       --cp-accent-2: #14b8a6;
-      --cp-success: #16a34a;
-      --cp-danger: #dc2626;
-      --cp-warning: #f59e0b;
       --cp-link: #0a66c2;
       --cp-shadow: 0 18px 48px rgba(15, 30, 51, 0.10);
       --cp-highlight: rgba(20, 184, 166, 0.14);
@@ -45,18 +40,13 @@
       --cp-surface: #142638;
       --cp-surface-soft: #182d43;
       --cp-border: #24405e;
-      --cp-border-strong: #3a5878;
       --cp-text: #e6edf5;
       --cp-text-muted: #9fb3c8;
-      --cp-text-soft: #b6c6d8;
       --cp-accent: #3b9dff;
       --cp-accent-hover: #62b0ff;
       --cp-accent-soft: rgba(59, 157, 255, 0.14);
       --cp-accent-fg: #06121f;
       --cp-accent-2: #2dd4bf;
-      --cp-success: #4ade80;
-      --cp-danger: #f87171;
-      --cp-warning: #fbbf24;
       --cp-link: #62b0ff;
       --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
       --cp-highlight: rgba(45, 212, 191, 0.16);
@@ -72,8 +62,6 @@
       font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.55;
     }
-
-    a { color: var(--cp-link); }
 
     .shell {
       width: min(1120px, calc(100% - 32px));
@@ -131,7 +119,7 @@
 
     .nav-links a:hover { color: var(--cp-accent); }
 
-    h1, h2, h3 { margin: 0; letter-spacing: -0.03em; line-height: 1.1; }
+    h1, h2, h3 { margin: 0; letter-spacing: -0.03em; line-height: 1.15; }
     p { margin: 0; }
 
     .hero {
@@ -155,54 +143,20 @@
       pointer-events: none;
     }
 
-    .hero > * { position: relative; z-index: 2; }
     .hero .shell,
     .hero .shell * { position: relative; z-index: 2; }
 
     .hero h1,
-    .hero h2,
-    .hero h3,
     .hero span,
     .hero a { color: #ffffff !important; }
-
     .hero p { color: #ffffff !important; opacity: 0.95; }
-    .hero .hero-sub { color: rgba(255,255,255,0.9) !important; }
-
-    .hero .eyebrow {
-      background: rgba(255,255,255,0.18);
-      color: #ffffff !important;
-      border: 1px solid rgba(255,255,255,0.4);
-    }
-
-    .hero .button {
-      background: rgba(255,255,255,0.14);
-      color: #ffffff !important;
-      border-color: rgba(255,255,255,0.45);
-    }
-
-    .hero .button.primary {
-      background: #ffffff;
-      color: var(--cp-accent) !important;
-      border-color: #ffffff;
-    }
-
-    .hero .button.primary:hover { background: #eaf3ff; }
-
-    .hero-sub {
-      display: block;
-      margin-top: 10px;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
 
     .eyebrow {
       display: inline-flex;
       padding: 6px 12px;
       border-radius: 999px;
-      background: var(--cp-accent-soft);
-      color: var(--cp-accent);
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.4);
       font-size: 13px;
       font-weight: 700;
     }
@@ -213,10 +167,19 @@
       font-size: clamp(36px, 6vw, 60px);
     }
 
-    .hero p {
+    .hero-sub {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9) !important;
+    }
+
+    .hero p.lead {
       margin: 18px auto 0;
       max-width: 640px;
-      color: var(--cp-text-muted);
       font-size: 19px;
     }
 
@@ -251,17 +214,62 @@
 
     .button.primary:hover { background: var(--cp-accent-hover); }
 
+    .hero .button {
+      background: rgba(255,255,255,0.14);
+      color: #ffffff !important;
+      border-color: rgba(255,255,255,0.45);
+    }
+
+    .hero .button.primary {
+      background: #ffffff;
+      color: var(--cp-accent) !important;
+      border-color: #ffffff;
+    }
+
     section { padding: 48px 0; }
 
     .section-title {
       display: grid;
       gap: 8px;
       text-align: center;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .section-title h2 { font-size: clamp(26px, 3.5vw, 36px); }
     .section-title p { color: var(--cp-text-muted); max-width: 620px; margin: 0 auto; }
+
+    /* Track tabs */
+    .tabs {
+      display: inline-flex;
+      padding: 4px;
+      border: 1px solid var(--cp-border);
+      background: var(--cp-surface);
+      border-radius: 999px;
+      gap: 4px;
+      margin: 0 auto 28px;
+    }
+
+    .tabs button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--cp-text-muted);
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .tabs button.active {
+      background: var(--cp-accent);
+      color: var(--cp-accent-fg);
+    }
+
+    .tabs-wrap { text-align: center; }
 
     .courses {
       display: grid;
@@ -286,15 +294,19 @@
       padding: 4px 10px;
       border-radius: 999px;
       background: var(--cp-highlight);
-      color: var(--cp-accent);
+      color: var(--cp-accent-2);
       font-size: 12px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
-    .course-card h3 { font-size: 22px; }
+    .badge.company {
+      background: var(--cp-accent-soft);
+      color: var(--cp-accent);
+    }
 
+    .course-card h3 { font-size: 22px; }
     .course-card p.desc { color: var(--cp-text-muted); }
 
     .course-meta {
@@ -306,6 +318,7 @@
       border-radius: 0.625rem;
       background: var(--cp-surface-soft);
       font-size: 14px;
+      margin: 0;
     }
 
     .course-meta dt {
@@ -332,22 +345,21 @@
       margin-top: auto;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-    }
-
-    .tile {
-      padding: 22px;
+    /* Track descriptions */
+    .track-desc {
+      max-width: 720px;
+      margin: 0 auto 22px;
+      padding: 18px 22px;
+      text-align: center;
+      color: var(--cp-text-muted);
+      background: var(--cp-surface);
       border: 1px solid var(--cp-border);
       border-radius: 16px;
-      background: var(--cp-surface);
     }
 
-    .tile h3 { font-size: 18px; margin-bottom: 8px; }
-    .tile p { color: var(--cp-text-muted); font-size: 15px; }
+    .track-desc strong { color: var(--cp-text); }
 
+    /* How it works */
     .steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -406,20 +418,9 @@
     }
 
     summary::-webkit-details-marker { display: none; }
-
-    summary::after {
-      content: "+";
-      float: right;
-      color: var(--cp-accent);
-      font-weight: 800;
-    }
-
+    summary::after { content: "+"; float: right; color: var(--cp-accent); font-weight: 800; }
     details[open] summary::after { content: "-"; }
-
-    details p {
-      margin-top: 10px;
-      color: var(--cp-text-muted);
-    }
+    details p { margin-top: 10px; color: var(--cp-text-muted); }
 
     .cta-band {
       margin: 20px 0 0;
@@ -465,11 +466,11 @@
     <section class="hero">
       <div class="shell">
         <span class="eyebrow">Live instructor-led · Online & on-site</span>
-        <h1>Master Microsoft Cloud and AI with live expert coaching.</h1>
+        <h1>Live Microsoft Cloud and AI training for individuals and companies.</h1>
         <span class="hero-sub">By Maged Nader — Microsoft Certified Trainer · Senior Cloud & AI Solution Engineer</span>
-        <p>Practical bootcamps designed for professionals who want real preparation, live Q&A, hands-on labs, and clear certification guidance.</p>
+        <p class="lead">Two tracks: bootcamps for individuals building their skills, and tailored programs for companies upskilling their teams.</p>
         <div class="cta-row">
-          <a href="#courses" class="button primary">See open courses</a>
+          <a href="#courses" class="button primary">Browse courses</a>
           <a href="#how" class="button">How it works</a>
         </div>
       </div>
@@ -477,26 +478,25 @@
 
     <section class="shell" id="courses">
       <div class="section-title">
-        <h2>Open courses</h2>
-        <p>Pick a course to see details and register. Seats are limited per cohort.</p>
+        <h2>Choose your track</h2>
+        <p>Same expert instructor. Different formats for individual learners and corporate teams.</p>
       </div>
 
+      <div class="tabs-wrap">
+        <div class="tabs" role="tablist" aria-label="Course track">
+          <button role="tab" data-track="individuals" class="active" aria-selected="true">For Individuals</button>
+          <button role="tab" data-track="companies" aria-selected="false">For Companies</button>
+        </div>
+      </div>
+
+      <div id="trackDesc" class="track-desc"></div>
       <div class="courses" id="coursesGrid"></div>
-
-      <!--
-        =============================================================
-        TO ADD OR EDIT A COURSE:
-        Scroll to the bottom of this file and edit the COURSES list.
-        No HTML knowledge needed. Just fill in the fields.
-        =============================================================
-      -->
-
     </section>
 
     <section class="shell" id="how">
       <div class="section-title">
         <h2>How registration works</h2>
-        <p>A simple 4-step process from interest to your first live session.</p>
+        <p>A simple flow from interest to your live sessions.</p>
       </div>
       <div class="steps">
         <div class="step">
@@ -505,40 +505,19 @@
         </div>
         <div class="step">
           <h3>Fill the form</h3>
-          <p>Share your name, email, and preferred payment method. It only takes 2 minutes.</p>
+          <p>Share your details and preferred format (online or on-site). Only takes 2 minutes.</p>
         </div>
         <div class="step">
           <h3>Get payment link and session details</h3>
-          <p>You will receive an email with your payment link plus all the details of the sessions: dates, times, and what to prepare.</p>
+          <p>You'll receive an email with your payment link plus all session details: dates, times, and how to prepare.</p>
         </div>
         <div class="step">
           <h3>Complete payment</h3>
-          <p>Pay using the link. Your seat is officially reserved once payment is confirmed.</p>
+          <p>Your seat is officially reserved once payment is confirmed.</p>
         </div>
         <div class="step">
-          <h3>Receive your live Zoom link</h3>
-          <p>After payment, you will receive your live Zoom link for the sessions along with reminders before each class.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="shell">
-      <div class="section-title">
-        <h2>What you get</h2>
-        <p>Every course includes live coaching, practical exercises, and post-session support.</p>
-      </div>
-      <div class="grid-3">
-        <div class="tile">
-          <h3>Live expert instructor</h3>
-          <p>Real-time explanations, demos, and Q&A — not pre-recorded lectures.</p>
-        </div>
-        <div class="tile">
-          <h3>Hands-on labs</h3>
-          <p>Guided exercises that show how the concepts apply to real projects.</p>
-        </div>
-        <div class="tile">
-          <h3>Session materials & Q&A</h3>
-          <p>Get slides, references, and direct answers to your questions during and after each session.</p>
+          <h3>Receive your live link</h3>
+          <p>Get your Zoom link (or on-site location) plus reminders before every session.</p>
         </div>
       </div>
     </section>
@@ -549,8 +528,12 @@
       </div>
       <div class="faq">
         <details>
+          <summary>What's the difference between the individual and company tracks?</summary>
+          <p>Individual courses are open cohorts anyone can register for. Company programs are tailored: private cohorts for your team, customized scope, and flexible scheduling — delivered online or at your office.</p>
+        </details>
+        <details>
           <summary>Are the sessions online or on-site?</summary>
-          <p>Both. Every course is delivered live and is available online (via Zoom) and on-site. When you register, you can choose the format that works best for you.</p>
+          <p>Both. Every course can be delivered live online (Zoom) or on-site. Choose the format that works best for you when you register.</p>
         </details>
         <details>
           <summary>Is the course live or recorded?</summary>
@@ -558,30 +541,22 @@
         </details>
         <details>
           <summary>How do I pay?</summary>
-          <p>After you register, you will receive a payment link by email. Payment methods include PayPal, Payoneer, and bank transfer.</p>
+          <p>After you register, you'll receive a payment link by email. Payment methods include PayPal, Payoneer, and bank transfer.</p>
         </details>
         <details>
-          <summary>Do I need experience to attend?</summary>
-          <p>The Azure Master Course is intermediate. The AI & IT Fundamentals course is beginner-friendly and requires no technical background.</p>
-        </details>
-        <details>
-          <summary>What if I miss a session?</summary>
-          <p>Contact the instructor. In most cases you will receive materials or a recording of the missed session.</p>
-        </details>
-        <details>
-          <summary>Do you offer corporate training?</summary>
-          <p>Yes. Contact us for custom cohorts, private groups, or on-site delivery.</p>
+          <summary>Do you offer invoices for companies?</summary>
+          <p>Yes. Company programs include a formal invoice, VAT handling if applicable, and can be paid by corporate transfer.</p>
         </details>
       </div>
     </section>
 
     <section class="shell">
       <div class="cta-band">
-        <h2>Ready to join the next cohort?</h2>
-        <p>Pick a course and register. Seats are limited to keep the live experience high quality.</p>
+        <h2>Ready to start?</h2>
+        <p>Individuals can register directly. Companies can request a tailored program for their team.</p>
         <div class="cta-row">
-          <a class="button primary" href="#courses">Register now</a>
-          <a class="button" href="mailto:you@example.com">Contact us</a>
+          <a class="button primary" href="#courses">Browse courses</a>
+          <a class="button" href="mailto:you@example.com">Contact for companies</a>
         </div>
       </div>
     </section>
@@ -595,82 +570,115 @@
 
   <script>
     /* ==========================================================================
-       COURSES LIST — EDIT THIS TO ADD, REMOVE, OR CHANGE COURSES
+       COURSES — TWO TRACKS
        ==========================================================================
-       To add a new course:
-       1. Copy one full { ... } block below (from the opening { to the closing },)
-       2. Paste it inside the COURSES array
-       3. Change the fields (badge, title, description, duration, level, etc.)
-       4. Change formLink to your new Tally form link
-       5. Save the file. Done.
+       To add a course, copy any { ... } block inside the right track array
+       (INDIVIDUALS or COMPANIES), paste it below, and change the fields.
        ========================================================================== */
-    const COURSES = [
-      {
-        badge: "Flagship bootcamp",
-        title: "Azure Master Course — 4-Days Live Bootcamp",
-        description: "A complete 32-hour deep-dive into Microsoft Azure. Learn architecture, core services, security, and hands-on labs in an intensive live cohort.",
-        duration: "4 days / 32 hours",
-        format: "Live online or on-site",
-        level: "Intermediate",
-        audience: "Tech Professionals (Beginner to Advanced)",
-        language: "English & Arabic",
-        bullets: [
-          "Azure fundamentals and architecture overview",
-          "Compute, storage, networking, and identity",
-          "Security, governance, and monitoring",
-          "Hands-on labs and real scenarios",
-          "Certification prep guidance"
-        ],
-        formLink: "https://tally.so/r/Np9DdG"
-      },
-      {
-        badge: "Beginner friendly",
-        title: "AI & IT Fundamentals for Non-Technical Business Professionals",
-        description: "Understand AI, cloud, and IT concepts in a clear, practical way — no coding required. Designed specifically for business professionals who want to work confidently with technical teams.",
-        duration: "1 full day (8 hours)",
-        format: "Live online or on-site",
-        level: "Beginner",
-        audience: "Business professionals",
-        language: "English & Arabic",
-        bullets: [
-          "What is AI, cloud, and modern IT",
-          "Key business use cases",
-          "Common tools and platforms",
-          "How to talk to technical teams",
-          "Practical examples and Q&A"
-        ],
-        formLink: "https://tally.so/r/RG6MBK"
-      }
-      /* ---------- To add another course, copy the block above and paste here ----------
-      ,{
-        badge: "New course",
-        title: "Your Course Title",
-        description: "Short description of what students will learn.",
-        duration: "e.g. 3 days / 24 hours",
-        format: "Live online or on-site",
-        level: "Beginner / Intermediate / Advanced",
-        audience: "Who this is for",
-        language: "English & Arabic",
-        bullets: [
-          "Topic 1",
-          "Topic 2",
-          "Topic 3"
-        ],
-        formLink: "https://tally.so/r/YOUR_FORM_ID"
-      }
-      -------------------------------------------------------------------------------- */
-    ];
 
-    /* Renderer — you do not need to change anything below. */
-    (function renderCourses() {
-      const grid = document.getElementById("coursesGrid");
-      if (!grid) return;
-      const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({
-        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
-      }[c]));
-      grid.innerHTML = COURSES.map((c) => `
+    const TRACKS = {
+      individuals: {
+        label: "For Individuals",
+        description: "Open cohorts for professionals building their own skills. Pay per seat and join a live class.",
+        courses: [
+          {
+            badge: "Flagship bootcamp",
+            title: "Azure Master Course — 4-Days Live Bootcamp",
+            description: "A complete 32-hour deep-dive into Microsoft Azure. Learn architecture, core services, security, and hands-on labs in an intensive live cohort.",
+            duration: "4 days / 32 hours",
+            format: "Live online or on-site",
+            level: "Intermediate",
+            audience: "Tech Professionals (Beginner to Advanced)",
+            language: "English & Arabic",
+            bullets: [
+              "Azure fundamentals and architecture overview",
+              "Compute, storage, networking, and identity",
+              "Security, governance, and monitoring",
+              "Hands-on labs and real scenarios",
+              "Certification prep guidance"
+            ],
+            formLink: "https://tally.so/r/Np9DdG"
+          },
+          {
+            badge: "Beginner friendly",
+            title: "AI & IT Fundamentals for Non-Technical Business Professionals",
+            description: "Understand AI, cloud, and IT concepts in a clear, practical way — no coding required. Designed for business professionals who want to work confidently with technical teams.",
+            duration: "1 full day (8 hours)",
+            format: "Live online or on-site",
+            level: "Beginner",
+            audience: "Business professionals",
+            language: "English & Arabic",
+            bullets: [
+              "What is AI, cloud, and modern IT",
+              "Key business use cases",
+              "Common tools and platforms",
+              "How to talk to technical teams",
+              "Practical examples and Q&A"
+            ],
+            formLink: "https://tally.so/r/RG6MBK"
+          }
+        ]
+      },
+
+      companies: {
+        label: "For Companies",
+        description: "Private, tailored programs for your team. Custom scope, flexible schedule, delivered online or at your office. Invoiced to the company.",
+        courses: [
+          {
+            badge: "Private team cohort",
+            title: "Azure for Teams — Custom Bootcamp",
+            description: "A tailored version of the Azure Master Course delivered privately to your team. Scope and depth adjusted to your business, applications, and cloud maturity.",
+            duration: "3 – 5 days (customized)",
+            format: "Live online or on-site at your office",
+            level: "Beginner to Advanced",
+            audience: "IT, cloud, and engineering teams",
+            language: "English & Arabic",
+            bullets: [
+              "Tailored agenda based on your team's role and goals",
+              "Focus on Azure services your company actually uses",
+              "Real scenarios and labs mapped to your workloads",
+              "Certification path guidance for the team",
+              "Formal invoice for corporate procurement"
+            ],
+            formLink: "https://tally.so/r/1AzK4Q"
+          },
+          {
+            badge: "Leadership enablement",
+            title: "AI & Cloud Literacy for Business Leaders",
+            description: "A private one-day session that gives your business leaders and non-technical teams a clear, practical understanding of AI, cloud, and modern IT — aligned to your company's context.",
+            duration: "1 full day (8 hours)",
+            format: "Live online or on-site at your office",
+            level: "Beginner",
+            audience: "Executives, managers, business teams",
+            language: "English & Arabic",
+            bullets: [
+              "AI, cloud, and IT concepts explained for leaders",
+              "Business use cases mapped to your industry",
+              "How to evaluate technical proposals and vendors",
+              "Working effectively with your technical teams",
+              "Live Q&A with real examples from your business"
+            ],
+            formLink: "https://tally.so/r/Bzq17N"
+          }
+          /* ---------- Add another company course here if needed ---------- */
+        ]
+      }
+    };
+
+    const grid = document.getElementById("coursesGrid");
+    const trackDesc = document.getElementById("trackDesc");
+    const tabButtons = document.querySelectorAll(".tabs button");
+
+    const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[c]));
+
+    function render(trackKey) {
+      const track = TRACKS[trackKey];
+      trackDesc.innerHTML = `<strong>${esc(track.label)}.</strong> ${esc(track.description)}`;
+      grid.innerHTML = track.courses.map((c) => `
         <article class="course-card">
-          <span class="badge">${esc(c.badge)}</span>
+          <span class="badge ${trackKey === "companies" ? "company" : ""}">${esc(c.badge)}</span>
           <h3>${esc(c.title)}</h3>
           <p class="desc">${esc(c.description)}</p>
           <dl class="course-meta">
@@ -682,12 +690,28 @@
           </dl>
           <ul>${c.bullets.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>
           <div class="card-actions">
-            <a class="button primary" href="${esc(c.formLink)}" target="_blank" rel="noopener">Register now</a>
-            <a class="button" href="#how">How registration works</a>
+            <a class="button primary" href="${esc(c.formLink)}" target="_blank" rel="noopener">
+              ${trackKey === "companies" ? "Request this program" : "Register now"}
+            </a>
+            <a class="button" href="#how">How it works</a>
           </div>
         </article>
       `).join("");
-    })();
+    }
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        tabButtons.forEach((b) => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+        });
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+        render(btn.dataset.track);
+      });
+    });
+
+    render("individuals");
   </script>
 </body>
 </html>
