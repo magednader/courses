@@ -454,8 +454,47 @@
       .modal-close { top: 14px; right: 14px; }
     }
 
-    .modal-inner { padding: 32px; }
+    .modal-inner { padding: 32px; position: relative; }
     @media (max-width: 620px) { .modal-inner { padding: 24px 22px; } }
+
+    /* Scroll cue — visible fade + bouncing chevron at bottom */
+    .scroll-cue {
+      position: sticky;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 68px;
+      margin: -32px -32px -32px;
+      pointer-events: none;
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--surface) 65%);
+      transition: opacity 0.2s;
+      z-index: 3;
+    }
+    @media (max-width: 620px) {
+      .scroll-cue { margin: -24px -22px -24px; }
+    }
+    .scroll-cue.hidden { opacity: 0; }
+
+    .scroll-cue .chev {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      margin-bottom: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 6px 16px -4px rgba(10,102,194,0.5);
+      animation: bounce 1.6s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
 
     .modal-close {
       position: absolute;
@@ -926,9 +965,25 @@
         m.classList.add("open");
         m.setAttribute("aria-hidden", "false");
         document.body.classList.add("modal-open");
-        // push a history entry so mobile "back" closes the modal
         history.pushState({ modal: id }, "");
+        // Update scroll cue for this modal
+        requestAnimationFrame(() => updateScrollCue(m));
       }
+
+      function updateScrollCue(m) {
+        const cue = m.querySelector(".scroll-cue");
+        if (!cue) return;
+        const scrollable = m.scrollHeight - m.clientHeight > 10;
+        const atBottom = m.scrollTop + m.clientHeight >= m.scrollHeight - 10;
+        cue.classList.toggle("hidden", !scrollable || atBottom);
+      }
+
+      modals.forEach((m) => {
+        m.addEventListener("scroll", () => updateScrollCue(m));
+      });
+      window.addEventListener("resize", () => {
+        modals.forEach((m) => { if (m.classList.contains("open")) updateScrollCue(m); });
+      });
 
       function closeUI() {
         // User clicked close/backdrop/Escape — pop the pushed state (triggers popstate)
