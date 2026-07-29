@@ -127,13 +127,38 @@
     }
 
     .tagline {
-      margin: 18px auto 0;
+      margin: 14px auto 0;
       color: var(--muted);
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
     }
 
-    .tagline span { color: var(--text-2); font-weight: 600; }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .feat {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      background: linear-gradient(180deg, #ffffff 0%, #f5f8fc 100%);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-2);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.9),
+        0 1px 2px rgba(15,23,42,0.06),
+        0 3px 8px -3px rgba(15,23,42,0.12);
+    }
+
+    .feat svg { color: var(--accent); flex: 0 0 auto; }
 
     /* ============ AUDIENCE PICKER ============ */
     .picker {
@@ -669,7 +694,26 @@
 
       <h1>Live <span class="accent">Cloud, AI & Technology</span> training.</h1>
 
-      <p class="tagline"><span>For tech professionals & business teams</span> · Online or on-site · English & Arabic</p>
+      <p class="tagline">For tech professionals & non-tech business teams</p>
+
+      <div class="features">
+        <span class="feat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Online
+        </span>
+        <span class="feat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M14 9h1M9 13h1M14 13h1M9 17h1M14 17h1"/></svg>
+          On-site
+        </span>
+        <span class="feat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>
+          English
+        </span>
+        <span class="feat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>
+          Arabic
+        </span>
+      </div>
 
       <div class="picker">
         <button type="button" data-open="azure">
