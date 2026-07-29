@@ -864,6 +864,8 @@
     (function() {
       const backdrop = document.getElementById("backdrop");
       const modals = document.querySelectorAll(".modal");
+      let ignorePopstate = false;
+
       function open(id) {
         const m = document.getElementById(id);
         if (!m) return;
@@ -871,21 +873,39 @@
         m.classList.add("open");
         m.setAttribute("aria-hidden", "false");
         document.body.classList.add("modal-open");
+        // push a history entry so mobile "back" closes the modal
+        history.pushState({ modal: id }, "");
       }
-      function closeAll() {
+
+      function closeUI() {
+        // User clicked close/backdrop/Escape — pop the pushed state (triggers popstate)
+        if (document.body.classList.contains("modal-open")) {
+          history.back();
+        }
+      }
+
+      function closeInternal() {
         backdrop.classList.remove("open");
         modals.forEach((m) => { m.classList.remove("open"); m.setAttribute("aria-hidden", "true"); });
         document.body.classList.remove("modal-open");
       }
-      document.querySelectorAll(".program[data-course]").forEach((t) => {
-        t.addEventListener("click", () => open("modal-" + t.dataset.course));
-      });
+
       document.querySelectorAll(".picker button[data-open]").forEach((b) => {
         b.addEventListener("click", () => open("modal-" + b.dataset.open));
       });
-      document.querySelectorAll("[data-close]").forEach((b) => b.addEventListener("click", closeAll));
-      backdrop.addEventListener("click", closeAll);
-      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeAll(); });
+      document.querySelectorAll(".program[data-course]").forEach((t) => {
+        t.addEventListener("click", () => open("modal-" + t.dataset.course));
+      });
+      document.querySelectorAll("[data-close]").forEach((b) => b.addEventListener("click", closeUI));
+      backdrop.addEventListener("click", closeUI);
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeUI(); });
+
+      // Browser back button (mobile & desktop): close modal instead of leaving page
+      window.addEventListener("popstate", () => {
+        if (document.body.classList.contains("modal-open")) {
+          closeInternal();
+        }
+      });
     })();
 
     // Copy email
