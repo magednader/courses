@@ -41,11 +41,31 @@
 
     /* ============ HERO ============ */
     .hero {
-      padding: 80px 0 40px;
+      padding: 60px 0 32px;
       text-align: center;
     }
 
-    @media (max-width: 640px) { .hero { padding: 40px 0 24px; } }
+    @media (max-width: 640px) {
+      .hero { padding: 24px 0 20px; text-align: left; }
+
+      /* Mobile: horizontal identity block */
+      .identity {
+        display: grid;
+        grid-template-columns: 96px 1fr;
+        gap: 16px;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+      .photo { width: 96px; height: 96px; margin: 0; border-width: 3px; }
+      .name { margin: 0; font-size: 15px; }
+      .role { font-size: 12px; line-height: 1.35; }
+      .socials { justify-content: flex-start; margin-top: 8px; gap: 6px; }
+      .social { width: 34px; height: 34px; border-radius: 10px; }
+
+      h1 { margin: 4px 0 0; font-size: 28px; text-align: left; }
+      .tagline { margin: 10px 0 0; text-align: left; }
+      .features { justify-content: flex-start; margin-top: 12px; }
+    }
 
     .photo {
       width: 160px;
@@ -111,9 +131,9 @@
     .social:active { transform: translateY(0); }
 
     h1 {
-      margin: 34px auto 0;
+      margin: 28px auto 0;
       max-width: 720px;
-      font-size: clamp(30px, 5vw, 48px);
+      font-size: clamp(28px, 5vw, 44px);
       line-height: 1.08;
       letter-spacing: -0.035em;
       font-weight: 800;
@@ -677,19 +697,23 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="shell">
-      <div class="photo">
-        <img src="maged.png" alt="Maged Nader">
-      </div>
-      <p class="name">Maged Nader</p>
-      <p class="role">Microsoft Certified Trainer · Senior Cloud & AI Solution Engineer at Microsoft</p>
+      <div class="identity">
+        <div class="photo">
+          <img src="maged.png" alt="Maged Nader">
+        </div>
+        <div class="identity-txt">
+          <p class="name">Maged Nader</p>
+          <p class="role">Microsoft Certified Trainer · Senior Cloud & AI Solution Engineer at Microsoft</p>
 
-      <div class="socials">
-        <a class="social" href="https://www.linkedin.com/in/maged-eskander/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a class="social" href="#" data-copy-email aria-label="Copy email">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </a>
+          <div class="socials">
+            <a class="social" href="https://www.linkedin.com/in/maged-eskander/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a class="social" href="#" data-copy-email aria-label="Copy email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
       </div>
 
       <h1>Live <span class="accent">Cloud, AI & Technology</span> training.</h1>
