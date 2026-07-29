@@ -45,27 +45,6 @@
       text-align: center;
     }
 
-    @media (max-width: 640px) {
-      .hero { padding: 24px 0 20px; text-align: left; }
-
-      /* Mobile: horizontal identity block */
-      .identity {
-        display: grid;
-        grid-template-columns: 96px 1fr;
-        gap: 16px;
-        align-items: center;
-        margin-bottom: 18px;
-      }
-      .photo { width: 96px; height: 96px; margin: 0; border-width: 3px; }
-      .name { margin: 0; font-size: 15px; }
-      .role { font-size: 12px; line-height: 1.35; }
-      .socials { justify-content: flex-start; margin-top: 8px; gap: 6px; }
-      .social { width: 34px; height: 34px; border-radius: 10px; }
-
-      h1 { margin: 4px 0 0; font-size: 28px; text-align: left; }
-      .tagline { margin: 10px 0 0; text-align: left; }
-      .features { justify-content: flex-start; margin-top: 12px; }
-    }
 
     .photo {
       width: 160px;
@@ -690,6 +669,36 @@
       z-index: 110;
     }
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ============ MOBILE OVERRIDES ============ */
+    @media (max-width: 640px) {
+      .hero { padding: 24px 0 20px; text-align: center; }
+
+      .identity {
+        display: grid;
+        grid-template-columns: 84px minmax(0, 1fr);
+        gap: 16px;
+        align-items: center;
+        margin-bottom: 22px;
+        text-align: left;
+      }
+      .identity-txt { min-width: 0; }
+      .photo { width: 84px; height: 84px; margin: 0; border-width: 3px; }
+      .name { margin: 0; font-size: 15px; }
+      .role {
+        font-size: 12px;
+        line-height: 1.35;
+        margin: 2px 0 0;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      .socials { justify-content: flex-start; margin-top: 8px; gap: 6px; }
+      .social { width: 32px; height: 32px; border-radius: 10px; }
+
+      h1 { margin: 4px 0 0; font-size: 28px; text-align: center; }
+      .tagline { margin: 10px 0 0; text-align: center; }
+      .features { justify-content: center; margin-top: 14px; }
+    }
   </style>
 </head>
 <body>
